@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Anaadyanta 2017 | Events</title>
+        <meta name="description" content="Anaadyanta Events Category" />
+        <meta name="keywords" content="Anaadyanta, Events, Cultural, Technical, Gaming, Sports" />
+        <meta name="author" content="Anaadyanta Web Team" />
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" type="text/css" href="css/demo_eventcat.css" />
+        <link rel="stylesheet" type="text/css" href="css/style_eventcat.css" />
+		<link rel="stylesheet" type="text/css" href="css/linkstyles_eventcat.css" />
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,700' rel='stylesheet' type='text/css' />
+    </head>
+    <body>
+		<canvas id='bgCanvas'></canvas>
+        <div class="container" style="z-index: 100">
+
+		<div class="grid">
+			<div class="grid__item">
+				<a class="link link--surinami" href="#"><span data-letters-l="Eve" data-letters-r="nts">Events</span></a>
+			</div>
+		</div>
+
+			<section class="main">
+			
+				<ul class="ch-grid">
+					<li>
+						<div class="ch-item">	
+							<div class="ch-info">
+								<h3>Cultural Events</h3>
+								<p>Dive Into Euphoria!<a href="#">View now</a></p>
+							</div>
+							<div class="ch-thumb ch-img-1"></div>
+						</div>
+					</li>
+					<li>
+						<div class="ch-item">
+							<div class="ch-info">
+								<h3>Technical Events</h3>
+								<p>Feel the Innovation!<a href="#">View now</a></p>
+							</div>
+							<div class="ch-thumb ch-img-2"></div>
+						</div>
+					</li>
+					<li>
+						<div class="ch-item">
+							<div class="ch-info">
+								<h3>Gaming & Sports</h3>
+								<p>Let your Champion Come Alive!<a href="#">View now</a></p>
+							</div>
+							<div class="ch-thumb ch-img-3"></div>
+						</div>
+					</li>
+				</ul>
+				
+			</section>
+			
+        </div>
+		<script src="js/eventcat.js"></script>
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+		<script>
+		// Show hover effect on mobile devices
+		[].slice.call( document.querySelectorAll('.grid a') ).forEach( function(el) {
+			el.onclick = function() { return false; }
+		} );
+	</script>
+    </body>
+</html>
