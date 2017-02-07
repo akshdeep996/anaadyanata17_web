@@ -18,7 +18,7 @@ src: url('../fonts/LOVELO.OTF');
 
 .about h1 {
     text-align: center;
-    color:#fff;
+    color:white;
     font-family: Gil !important;
     font-size: 2.5em;
 }
