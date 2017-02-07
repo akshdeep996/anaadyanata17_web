@@ -84,7 +84,7 @@ header canvas {
 
 @font-face {
 font-family: myFancyFont;
-src: url('../font-awesome/fonts/boh.ttf');
+src: url('../fonts/boh.ttf');
 }
 
 .logo img{
