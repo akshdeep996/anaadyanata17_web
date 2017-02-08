@@ -1,33 +1,31 @@
 @font-face {
-font-family: Lblack;
-src: url('../fonts/lblack.otf');
+font-family: Boh;
+src: url('../fonts/boh.ttf');
 }
-
-
-@font-face {
-font-family: Gil;
-src: url('../fonts/gil.ttf');
-}
-
-@font-face {
-font-family: Lovelo;
-src: url('../fonts/LOVELO.OTF');
-}
-
 
 
 .about h1 {
     text-align: center;
-    color:white;
-    font-family: Gil !important;
-    font-size: 2.5em;
+    color:#fff;
+font-family: 'Kaushan Script' !important;
+    font-size: 4em;
+}
+
+.arrow {
+
+
+    position: absolute;
+    top:0;
+    left:0;
+
 }
 
 
 body {
 
-   background: url(../img/aboutus.jpg) no-repeat center center fixed;
-  font-family:Gil !important;
+   background: url(../image/aboutus.jpg);
+   background-size: 130% !important;
+  font-family:Roboto !important;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -37,7 +35,9 @@ body {
 
 .effect1 a {
 	padding: 0 0 10px;
-    font-family:Lovelo !important;  
+    font-family:Boh !important;  
+    font-size: 1.5em !important;
+    letter-spacing: 5px !important;
 }
 
 .effect1 a::after {
@@ -73,7 +73,7 @@ body {
 	font-weight: 20px;
 	text-align: left;
 	padding: .5em 10%;
-    font-family:Gil !important;
+    font-family:Roboto !important;
     color: white !important;
 	font-size: 1.3em;
 }
@@ -120,7 +120,6 @@ body {
     position: relative;
     padding: 10px 15px;
 
-
 }
 
 
@@ -152,11 +151,10 @@ a {
 
 .fade {
 opacity: 0 ;
--webkit-transition: opacity 2s linear !important;
-  -moz-transition: opacity 2s linear !important;
-   -ms-transition: opacity 2s linear !important;
-	-o-transition: opacity 2s linear !important;
-	   transition: opacity 2s linear !important;
+-webkit-transition: opacity 3s linear !important;
+  -moz-transition: opacity 3s linear !important;
+   -ms-transition: opacity 3s linear !important;
+	-o-transition: opacity 3s linear !important;
+	   transition: opacity 3s linear !important;
 }
-
 
