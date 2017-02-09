@@ -1,4 +1,5 @@
 /* General link styles */
+
 .link {
 	outline: none;
 	text-decoration: none;
@@ -15,13 +16,15 @@
 	color: #1e1a1b;
 }
 
- .link:focus {
- 	outline: none;
- }
+.link:focus {
+	outline: none;
+}
+
 
 /* Surinami */
+
 .link--surinami {
-	font-family: 'Playfair Display', serif;
+	font-family: 'Kaushan Script', serif;
 	font-weight: 400;
 	text-transform: uppercase;
 	font-size: 9em;
@@ -35,10 +38,10 @@
 	width: 100%;
 	height: 3px;
 	z-index: -1;
-	background: #3A4945;
+	background: rgb(0, 48, 96);
 	position: absolute;
-	-webkit-transform: scale3d(0,1,1);
-	transform: scale3d(0,1,1);
+	-webkit-transform: scale3d(0, 1, 1);
+	transform: scale3d(0, 1, 1);
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
@@ -59,8 +62,8 @@
 
 .link--surinami:hover::before,
 .link--surinami:hover::after {
-	-webkit-transform: scale3d(1,1,1);
-	transform: scale3d(1,1,1);
+	-webkit-transform: scale3d(1, 1, 1);
+	transform: scale3d(1, 1, 1);
 }
 
 .link--surinami span {
@@ -85,25 +88,27 @@
 .link--surinami span::before {
 	content: attr(data-letters-l);
 	left: 0;
-	-webkit-transform: translate3d(-5px,0,0);
-	transform: translate3d(-5px,0,0);
+	-webkit-transform: translate3d(-5px, 0, 0);
+	transform: translate3d(-5px, 0, 0);
 }
 
 .link--surinami span::after {
 	content: attr(data-letters-r);
 	right: 0;
-	-webkit-transform: translate3d(5px,0,0);
-	transform: translate3d(5px,0,0);
+	-webkit-transform: translate3d(5px, 0, 0);
+	transform: translate3d(5px, 0, 0);
 }
 
 .link--surinami:hover span::before,
 .link--surinami:hover span::after {
 	opacity: 1;
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
 }
 
+
 /* Grid */
+
 .grid__item {
 	margin: 2%;
 	padding: 2%;
@@ -116,7 +121,8 @@
 	align-items: center;
 	-webkit-justify-content: center;
 	justify-content: center;
-	-webkit-transform: translate3d(0,0,0); /* Solves Safari bug because of SVG clipping mask */
+	-webkit-transform: translate3d(0, 0, 0);
+	/* Solves Safari bug because of SVG clipping mask */
 }
 
 .grid__item p {
@@ -125,7 +131,11 @@
 	color: #777;
 }
 
+
 /* Media Queries */
+
 @media screen and (max-width: 50em) {
-	.link--surinami { font-size: 3em; }
+	.link--surinami {
+		font-size: 3em;
+	}
 }
