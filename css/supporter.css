@@ -17,8 +17,8 @@
 }
 
 body {
-    background: url(../img/aboutus.jpg) !important;
-    /*  background-size: 130% !important; */
+    background: url(../img/aboutus.jpg);
+    background-size: 130% !important;
     font-family: Roboto !important;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -26,14 +26,14 @@ body {
     background-size: cover;
 }
 
-.effect1 a {
+.effect2 a {
     padding: 0 0 10px;
     font-family: Boh !important;
     font-size: 1.5em !important;
     letter-spacing: 5px !important;
 }
 
-.effect1 a::after {
+.effect2 a::after {
     position: absolute;
     top: 100%;
     left: 0;
@@ -50,8 +50,8 @@ body {
     transform: translateY(-10px);
 }
 
-.effect1 a:hover::after,
-.effect1 a:focus::after {
+.effect2 a:hover::after,
+.effect2 a:focus::after {
     height: 5px;
     opacity: 1;
     -webkit-transform: translateY(0px);
@@ -92,7 +92,7 @@ body {
     color: #fff !important;
     cursor: pointer;
     background-color: transparent !important;
-    border-bottom: 3px solid #00a69c !important !important;
+    border-bottom: 3px solid #00a69c !important;
 }
 
 .nav-tabs>li>a {
@@ -133,7 +133,7 @@ a {
     background-color: none;
 }
 
-.effect1 a:hover {
+.effect2 a:hover {
     text-decoration: none;
 }
 
@@ -144,4 +144,17 @@ a {
     -ms-transition: opacity 3s linear !important;
     -o-transition: opacity 3s linear !important;
     transition: opacity 3s linear !important;
+}
+
+.contact li {
+    font-size: 1.3em;
+}
+
+.contact a {
+    color: #e6e6e6 !important;
+    text-decoration: none !important;
+}
+
+.contact a:hover {
+    color: white !important;
 }

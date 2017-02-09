@@ -1,92 +1,81 @@
 @font-face {
-font-family: Boh;
-src: url('../fonts/boh.ttf');
+    font-family: Boh;
+    src: url('../fonts/boh.ttf');
 }
-
 
 .about h1 {
     text-align: center;
-    color:#fff;
-font-family: 'Kaushan Script' !important;
+    color: #fff;
+    font-family: 'Kaushan Script' !important;
     font-size: 4em;
 }
 
 .arrow {
-
-
     position: absolute;
-    top:0;
-    left:0;
-
+    top: 0;
+    left: 0;
 }
-
 
 body {
-
-   background: url(../image/aboutus.jpg);
-   background-size: 130% !important;
-  font-family:Roboto !important;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background: url(../img/aboutus.jpg);
+    background-size: 130% !important;
+    font-family: Roboto !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-
 .effect1 a {
-	padding: 0 0 10px;
-    font-family:Boh !important;  
+    padding: 0 0 10px;
+    font-family: Boh !important;
     font-size: 1.5em !important;
     letter-spacing: 5px !important;
 }
 
 .effect1 a::after {
-	position: absolute;
-	top: 100%;
-	left: 0;
-	width: 100%;
-	height: 1px;
-	background: #fff;
-	content: '';
-	opacity: 0;
-	-webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
-	-moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
-	transition: height 0.3s, opacity 0.3s, transform 0.3s;
-	-webkit-transform: translateY(-10px);
-	-moz-transform: translateY(-10px);
-	transform: translateY(-10px);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    content: '';
+    opacity: 0;
+    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
 .effect1 a:hover::after,
 .effect1 a:focus::after {
-	height: 5px;
-	opacity: 1;
-	-webkit-transform: translateY(0px);
-	-moz-transform: translateY(0px);
-	transform: translateY(0px);
+    height: 5px;
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
 }
 
-
-
 .tab-content {
-	color:green ;
-	font-weight: 20px;
-	text-align: left;
-	padding: .5em 10%;
-    font-family:Roboto !important;
+    color: green;
+    font-weight: 20px;
+    text-align: left;
+    padding: .5em 10%;
+    font-family: Roboto !important;
     color: white !important;
-	font-size: 1.3em;
+    font-size: 1.3em;
 }
 
 .tabular {
-	margin-top: 5%;
+    margin-top: 5%;
 }
 
-
-
 .nav-tabs {
-	border-bottom-width: 0px;
-	border-bottom-style: none;
+    border-bottom-width: 0px;
+    border-bottom-style: none;
     font-size: 1.4em;
     width: 100%;
     margin-bottom: 0px;
@@ -94,17 +83,19 @@ body {
     text-align: center !important;
     list-style: none;
     margin-bottom: 15px !important;
- 	border-bottom: 0px solid #00a69c !important;
- }
+    border-bottom: 0px solid #00a69c !important;
+}
 
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
     color: #fff !important;
     cursor: pointer;
     background-color: transparent !important;
-    border-bottom: 3px solid #00a69c !important !important;
+    border-bottom: 3px solid #00a69c !important;
 }
 
-.nav-tabs > li > a {
+.nav-tabs>li>a {
     padding: 5px 15px;
     font-weight: 700;
     font-size: 1.2em;
@@ -115,29 +106,26 @@ body {
     border: 0px solid transparent !important;
     margin-right: 2px;
     line-height: 1.42857143;
-    border: 0px solid ;
+    border: 0px solid;
     border-radius: 0px 0px 0 0;
     position: relative;
     padding: 10px 15px;
-
 }
 
-
-.nav > li > a:focus, .nav > li > a:hover {
+.nav>li>a:focus,
+.nav>li>a:hover {
     text-decoration: none;
     background-color: transparent !important;
 }
 
-.nav-tabs > li
-    {
+.nav-tabs>li {
     float: none !important;
     text-align: center !important;
+}
 
-   }
-.nav > li 
-    {
+.nav>li {
     display: inline-block !important;
-    }
+}
 
 a {
     color: #337ab7;
@@ -146,15 +134,14 @@ a {
 }
 
 .effect1 a:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .fade {
-opacity: 0 ;
--webkit-transition: opacity 3s linear !important;
-  -moz-transition: opacity 3s linear !important;
-   -ms-transition: opacity 3s linear !important;
-	-o-transition: opacity 3s linear !important;
-	   transition: opacity 3s linear !important;
+    opacity: 0;
+    -webkit-transition: opacity 3s linear !important;
+    -moz-transition: opacity 3s linear !important;
+    -ms-transition: opacity 3s linear !important;
+    -o-transition: opacity 3s linear !important;
+    transition: opacity 3s linear !important;
 }
-
