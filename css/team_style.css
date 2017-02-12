@@ -12,9 +12,51 @@
 	transition: all 0.4s ease-in-out;
 }
 
+.ch-img-1 {
+	background-image: url(../img/ramish.jpg);
+}
+.ch-img-2 {
+	background-image: url(../img/arvind.jpg);
+}
+
+.ch-img-3 {
+	background-image: url(../img/shivam.jpg);
+}
+.ch-img-4 {
+	background-image: url(../img/monica.jpg);
+}
+.ch-img-5 {
+	background-image: url(../img/.jpg);
+}
+
 .ch-img-6 {
 	background-image: url(../img/akshdeep.jpg);
 }
+
+.ch-img-7 {
+	background-image: url(../img/priyesh.jpg);
+}
+
+.ch-img-8 {
+	background-image: url(../img/paras.jpg);
+}
+
+.ch-img-9 {
+	background-image: url(../img/dheeraj.jpg);
+}
+
+.ch-img-10 {
+	background-image: url(../img/lavanya.jpg);
+}
+
+.ch-img-11 {
+	background-image: url(../img/bharat.jpg);
+}
+
+.ch-img-12 {
+	background-image: url(../img/aishwarya.jpg);
+}
+
 
 .ch-info {
 	position: absolute;
