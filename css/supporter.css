@@ -7,7 +7,7 @@
     text-align: center;
     color: #fff;
     font-family: 'Kaushan Script' !important;
-    font-size: 4em;
+    font-size: 6vmax;
 }
 
 .arrow {
@@ -17,8 +17,10 @@
 }
 
 body {
-    background: url(../img/aboutus.jpg);
-    background-size: 130% !important;
+    background : -webkit-radial-gradient(circle,#1a82f7,#2F2727);
+    background : -moz-radial-gradient(circle,#1a82f7,#2F2727);
+    background : -o-radial-gradient(circle,#1a82f7,#2F2727);
+    background :  radial-gradient(circle,#1a82f7,#2F2727);
     font-family: Roboto !important;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -26,10 +28,12 @@ body {
     background-size: cover;
 }
 
+
 .effect2 a {
+    margin-top: -15%;
     padding: 0 0 10px;
     font-family: Boh !important;
-    font-size: 1.5em !important;
+    font-size: 2.5vmax !important;
     letter-spacing: 5px !important;
 }
 
@@ -52,7 +56,7 @@ body {
 
 .effect2 a:hover::after,
 .effect2 a:focus::after {
-    height: 5px;
+    height: 3px;
     opacity: 1;
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -63,10 +67,11 @@ body {
     color: green;
     font-weight: 20px;
     text-align: left;
-    padding: .5em 10%;
     font-family: Roboto !important;
     color: white !important;
-    font-size: 1.3em;
+    font-size: 3vmin !important;
+    padding-left: 7%;
+    padding-right: 7%;
 }
 
 .tabular {
@@ -139,11 +144,11 @@ a {
 
 .fade {
     opacity: 0;
-    -webkit-transition: opacity 3s linear !important;
-    -moz-transition: opacity 3s linear !important;
-    -ms-transition: opacity 3s linear !important;
-    -o-transition: opacity 3s linear !important;
-    transition: opacity 3s linear !important;
+    -webkit-transition: opacity 1.5s linear !important;
+    -moz-transition: opacity 1.5s linear !important;
+    -ms-transition: opacity 1.5s linear !important;
+    -o-transition: opacity 1.5s linear !important;
+    transition: opacity 1.5s linear !important;
 }
 
 .contact li {
@@ -157,4 +162,25 @@ a {
 
 .contact a:hover {
     color: white !important;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+.tab-content {
+    font-weight: 20px;
+    text-align: left;
+    font-family: Roboto !important;
+    color: white !important;
+    font-size: 3.5vmin !important;       
+    }
+
+
+.contact {
+    padding-left: -10% !important;
+    margin-left: -20% !important;
+}
+
+
 }
