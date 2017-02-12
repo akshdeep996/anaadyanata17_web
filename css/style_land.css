@@ -788,3 +788,28 @@ a:focus {
 		font-size: 1em;
 	}
 }
+
+
+@media only screen and (max-width: 500px) {
+
+	.featured-list {
+		width: 100%;
+		min-width: 0;
+		max-width: none;
+		margin-top: 15vh;
+	}
+	.featured-list__item {
+		width: 50%;
+	}
+	.featured-list__img {
+		width: 50px;
+		max-width: none;
+		min-width: 0;
+	}
+	.featured-list__title {
+		font-size: 4vmin;
+	}
+
+        
+    }
+}

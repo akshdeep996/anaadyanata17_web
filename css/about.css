@@ -7,7 +7,7 @@
     text-align: center;
     color: #fff;
     font-family: 'Kaushan Script' !important;
-    font-size: 4em;
+    font-size: 6vmax;
 }
 
 .arrow {
@@ -17,8 +17,10 @@
 }
 
 body {
-    background: url(../img/aboutus.jpg);
-    background-size: 130% !important;
+	background : -webkit-radial-gradient(circle,#1a82f7,#2F2727);
+	background : -moz-radial-gradient(circle,#1a82f7,#2F2727);
+    background : -o-radial-gradient(circle,#1a82f7,#2F2727);
+    background :  radial-gradient(circle,#1a82f7,#2F2727);
     font-family: Roboto !important;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -27,9 +29,10 @@ body {
 }
 
 .effect1 a {
+	margin-top: -20%;
     padding: 0 0 10px;
     font-family: Boh !important;
-    font-size: 1.5em !important;
+    font-size: 5vmin !important;
     letter-spacing: 5px !important;
 }
 
@@ -52,7 +55,7 @@ body {
 
 .effect1 a:hover::after,
 .effect1 a:focus::after {
-    height: 5px;
+    height: 3px;
     opacity: 1;
     -webkit-transform: translateY(0px);
     -moz-transform: translateY(0px);
@@ -66,7 +69,7 @@ body {
     padding: .5em 10%;
     font-family: Roboto !important;
     color: white !important;
-    font-size: 1.3em;
+    font-size: 3vmin !important;
 }
 
 .tabular {
@@ -139,9 +142,27 @@ a {
 
 .fade {
     opacity: 0;
-    -webkit-transition: opacity 3s linear !important;
-    -moz-transition: opacity 3s linear !important;
-    -ms-transition: opacity 3s linear !important;
-    -o-transition: opacity 3s linear !important;
-    transition: opacity 3s linear !important;
+    -webkit-transition: opacity 1.5s linear !important;
+    -moz-transition: opacity 1.5s linear !important;
+    -ms-transition: opacity 1.5s linear !important;
+    -o-transition: opacity 1.5s linear !important;
+    transition: opacity 1.5s linear !important;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+.tab-content {
+    color: green;
+    font-weight: 20px;
+    text-align: left;
+    padding: .5em 10%;
+    font-family: Roboto !important;
+    color: white !important;
+    font-size: 4vmin !important;
+
+
+        
+    }
 }
