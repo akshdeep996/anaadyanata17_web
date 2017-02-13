@@ -1,0 +1,101 @@
+.tilter {
+	display: block;
+	position: relative;
+	width: 300px;
+	height: 415px;
+	margin: 1.5em 2.5em;
+	color: #fff;
+	flex: none;
+	perspective: 1000px;
+}
+
+.tilter * {
+	pointer-events: none;
+}
+
+.tilter:hover,
+.tilter:focus {
+	color: #fff;
+	outline: none;
+}
+
+.tilter__figure,
+.tilter__image {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.tilter__figure > * {
+	transform: translateZ(0px); /* Force correct stacking order */
+}
+
+.smooth .tilter__figure,
+.smooth .tilter__deco--overlay,
+.smooth .tilter__deco--lines,
+.smooth .tilter__deco--shine div,
+.smooth .tilter__caption {
+	transition: transform 0.2s ease-out;
+}
+
+.tilter__figure {
+	position: relative;
+}
+
+.tilter__figure::before {
+	content: '';
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	top: 5%;
+	left: 5%;
+	box-shadow: 0 30px 20px rgba(35,32,39,0.5);
+}
+
+.tilter__deco {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.tilter__deco--overlay {
+	background-image: linear-gradient(45deg, rgba(226, 60, 99, 0.2), rgba(145, 58, 252, 0.2), rgba(16, 11, 192, 0.2));
+}
+
+.tilter__caption {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	padding: 4em;
+}
+
+.tilter__title {
+	margin: 0;
+	font-weight: normal;
+	font-size: 2.5em;
+	font-family: 'Abril Fatface', serif;
+	line-height: 1;
+}
+
+.tilter__description {
+	margin: 1em 0 0 0;
+	font-size: 0.85em;
+	letter-spacing: 0.15em;
+}
+
+/* Individual styles */
+
+/* Example 3 (no lines, overlay hard-light) */
+.tilter--3 .tilter__deco--overlay {
+	background-image: linear-gradient(45deg, rgba(205, 81, 220, 0.6), rgba(41, 94, 230,0.5));
+}
+
+.tilter--3 .tilter__caption {
+	padding: 2em;
+	text-align: right;
+	text-shadow: 0.1em 0.8em 1em rgba(0,0,0,0.35);
+}

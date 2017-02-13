@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cultural Events | Anaadyanta 2017</title>
+	<meta name="description" content="Anaadyanta is the Annual Techno-Cultural Festival of Nitte Meenakshi Institute of Technology, Bangalore."
+	/>
+	<meta name="keywords" content="anaadyanta 2017, annual, techno-cultural, NMIT, dive, feel, come alive, underwater, events, Cultural"
+	/>
+	<meta name="author" content="Rajnarayan | Anaadyanta web team" />
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Abril+Fatface" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/demo_eventdet.css" />
+	<link rel="stylesheet" type="text/css" href="css/component_eventdet.css" />
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/evently.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/register.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<style>
+		.navig:hover {
+			font-size: 1.2em !important;
+			transform: scale(1.2, 1.2);
+			-moz-transform: scale(1.2, 1.2);
+			-o-transform: scale(1.2, 1.2);
+			-webkit-transform: scale(1.2, 1.2);
+			transition: 0.3s;
+		}
+	</style>
+	<script src="js/eventdetails.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/linkstyler.css" />
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyCwxCsa6bpS7jGilkUynJW5OU72v8ECnPU",
+			authDomain: "anaadyanta-7f08a.firebaseapp.com",
+			databaseURL: "https://anaadyanta-7f08a.firebaseio.com",
+			storageBucket: "anaadyanta-7f08a.appspot.com",
+			messagingSenderId: "894718661794"
+		};
+		firebase.initializeApp(config);
+	</script>
+	<script type="text/javascript">
+		function back() {
+			window.history.back();
+		}
+	</script>
+	<script>
+		function register() {
+
+			$("#regForm").css("display", "none")
+			$("#refMessage").html("Working, please wait...").css("display", "block")
+
+			var emailRegex =
+				/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			var mobRegex = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/g;
+
+			var name = document.getElementById("name").value;
+			var cont = document.getElementById("cont").value;
+			var email = document.getElementById("email").value;
+			var coll = document.getElementById("coll").value;
+
+			if (name == "") {
+				document.getElementById("name").focus();
+				$("#refMessage").html("Enter your name!")
+				$("#regForm").css("display", "block")
+				return
+			}
+
+			if (email == "") {
+				document.getElementById("email").focus();
+				$("#refMessage").html("Enter your Email-id!")
+				$("#regForm").css("display", "block")
+				return
+			} else if (!emailRegex.test(email)) {
+				document.getElementById("email").focus();
+				$("#refMessage").html("Enter a valid Email-id!")
+				$("#regForm").css("display", "block")
+				return
+			}
+
+			if (cont == "") {
+				document.getElementById("cont").focus();
+				$("#refMessage").html("Enter your Mobile Number!")
+				$("#regForm").css("display", "block")
+				return
+			} else if (!mobRegex.test(cont)) {
+				document.getElementById("cont").focus();
+				$("#refMessage").html("Enter a valid Mobile Number!")
+				$("#regForm").css("display", "block")
+				return
+			}
+
+			if (coll == "") {
+				document.getElementById("coll").focus();
+				$("#refMessage").html("Enter your College name!")
+				$("#regForm").css("display", "block")
+				return
+			}
+
+			if (!name || !cont || !email || !coll) {
+				$("#refMessage").html("You must fill all the details to register!")
+				$("#regForm").css("display", "block")
+				return
+			}
+
+			var event = currentEvent.title;
+			const newPostKey = firebase.database().ref().child('registeration').push().key
+			const postData = {
+				eventKey: currentEvent.euid,
+				event: currentEvent.title,
+				date: moment().unix(),
+				name,
+				phone: cont,
+				email,
+				college: coll,
+				agent: 'web'
+			}
+			var updates = {}
+			updates['/registeration/' + newPostKey] = postData
+			firebase.database().ref().update(updates).then(function (res) {
+				$("#refMessage").html("Event registration successful!")
+			}).catch(function (err) {
+				$("#refMessage").html("Oops! Something went wrong! Please try again.")
+				console.log(JSON.stringify(err))
+				$("#regForm").css("display", "block")
+				return
+			})
+		}
+	</script>
+	<script>
+		// firebase.database().ref('/events/').once('value').then(function(snapshot) {
+		// 	console.log(snapshot.val())
+		// })
+		document.documentElement.className = 'js';
+		var events
+		var currentCat = 1
+		var currentCatEvents = {}
+		var currentEvent = {}
+	</script>
+</head>
+
+<body class="loading" style="overflow-x: hidden !important;">
+	<svg class="hidden">
+		<defs>
+			<symbol id="icon-arrow" viewBox="0 0 24 24">
+				<title>arrow</title>
+				<polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 " />
+			</symbol>
+		</defs>
+	</svg>
+	<main>
+		<a id="osp" href="#ospModal"></a>
+		<section class="content content--c3" id="eventSection">
+		</section>
+	</main>
+	<!--MODAL-->
+	<div id="ospModal">
+		<div id="btn-close-modal" class="close-ospModal" style="max-width: 55px">
+			<img class="closebt" src="img/closebt.svg">
+		</div>
+		<div class="modal-content">
+			<!--Starts-->
+			<div class='content-event'>
+				<div class='tabs-v' id="eventContainer">
+				</div>
+			</div>
+			<!--Ends-->
+		</div>
+	</div>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/anime.min.js"></script>
+	<script src="js/main_eventdet.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/animatedModal.min.js"></script>
+	<script src="js/moment.js"></script>
+	<script>
+		function generateRulesSection(rules) {
+
+			if (!rules || rules.length < 1) {
+				return "<p>Yet to be decided</p>"
+			}
+
+			let content = ""
+
+			rules.map(r => {
+				if (r.isHeader) {
+					content += `<p style="padding-top: 10px;"><b>${r.name}</b></p>`
+					if (r.hasSubItem) {
+						content += `<ol  style="list-style-type: 1" >`
+						content += this.generateSubContent(r.subContent)
+						content += `</ol><br/>`
+					}
+				}
+			})
+
+
+			return content
+		}
+
+		function generateSubContent(rules) {
+			if (!rules) return
+
+			let content = ""
+			if (rules && rules.length > 0) {
+				rules.map(r => {
+					if (r.description) {
+						content += `<li style="padding-top: 10px"><b>${r.name}</b></li><p>${r.description}</p>`
+					} else {
+						if (r.hasSubItem) content += `<li style="padding-top: 10px"><b>${r.name}</b></li>`
+						else content += `<li>${r.name}</li>`
+					}
+					if (r.hasSubItem) {
+						content += `<ol>`
+						content += this.generateSubContent(r.subContent)
+						content += `</ol>`
+					}
+				})
+			}
+			return content
+		}
+
+		function coordinatorTable(coordinators) {
+			let content = ""
+			if (!coordinators || coordinators.length < 1) return "Coordinators will be assigned soon."
+			if (coordinators && coordinators.length > 0) {
+				coordinators.map(val => {
+					content +=
+						`<tr>
+									<td>${val.name}</td>
+                					<td>${val.mobile || val.phone}</td>
+                				</tr>`
+				})
+			}
+			return `
+            <table style="width: 80%; text-align: left">
+            <thead> <tr>
+                <th style="text-align:left">Name</th>
+                <th style="text-align:left">Mobile/Phone</th>
+                </tr> 
+            </thead> 
+            <tbody>
+                ${content}
+            </tbody>
+            </table>
+        `
+		}
+
+		function generateImpDetails(eventDetails) {
+			let content =
+				`
+					<table style="width: 100%; text-align: left" >
+						<tbody>
+							<tr >
+								<th>Venue</th>
+								<td>${"Nitte Meenakshi Institute of Technology, Bangalore"}</td>
+							</tr>
+							<tr >
+								<th>Date</th>
+								<td>Will be updated soon!</td>
+							</tr>
+							<tr>
+								<th>Time</th>
+								<td>Will be updated soon!</td>
+							</tr>
+							<tr>
+								<th>Registration Fees</th>
+								<td>${eventDetails.registration? "Rs. " + eventDetails.registration : "FREE" } </td>
+							</tr>
+							${this.generatePrizesTableRow(eventDetails.prizes)}    
+						</tbody>
+						</table>
+
+					`
+
+			return content
+
+		}
+
+		function generatePrizesTableRow(prizes) {
+			let content = "";
+			if (prizes && prizes.length > 0) {
+				prizes.map(prize => {
+					content +=
+						`
+                    <tr>
+                    <th>Prize ${prize.position}</th>
+                    <td>Rs. ${prize.amount} </td>
+                </tr>
+                    `
+				})
+			}
+			return content
+		}
+
+
+		function buildModal() {
+			currentCatEvents = {}
+			$("#eventSection").empty()
+			var heading =
+				`<div class="navig" style="position: absolute; top:0; left:0; margin-top: 3%; margin-left: 3%; cursor: pointer; z-index: 150; color: white;">
+		<i class="fa fa-arrow-left fa-2x" aria-hidden="true" onclick="back()"></i>
+	</div>
+			<div class="grid">
+				<div class="grid__item">
+					<a class="linkerd link--takiri" href="#">Cultural Events<span>Dive into Euphoria!</span></a>
+				</div>
+			</div>`
+			$("#eventSection").append($.parseHTML(heading))
+
+			Object.keys(events).map(function (key) {
+				if (currentCat == events[key].category) {
+					currentCatEvents[key] = events[key]
+				}
+			})
+
+
+
+			Object.keys(currentCatEvents).map(function (key) {
+				var e = currentCatEvents[key]
+
+				var description = e.description ? e.description : "The description will be updated soon!";
+				description = description.length > 40 ? description.substr(0, 37) + "..." : description;
+
+				var nodeString =
+					`<a id="${key}" href="#ospModal" class="tilter tilter--3 eventModalSection">
+					<figure class="tilter__figure">
+						<img class="tilter__image" src="${e.image}" alt="${e.title}" />
+						<div class="tilter__deco tilter__deco--overlay"></div>
+						<figcaption class="tilter__caption">
+							<h3 class="tilter__title">${e.title}</h3>
+							<p class="tilter__description">${description}</p>
+						</figcaption>
+					</figure>
+				</a>
+			`
+				$("#eventSection").append($.parseHTML(nodeString))
+			})
+			// Generate events modal on click
+			$(".eventModalSection").on('click', function (ele) {
+
+
+				currentEvent = events[ele.target.id]
+
+
+				var key = ele.target.id
+
+				var htmlString =
+					`
+					<input checked id='rad1-${key}' name='rad-${key}' type='radio'>
+					<label data-text='About' for='rad1-${key}'></label>
+					
+					<input id='rad2-${key}' name='rad-${key}' type='radio'>
+					<label data-text='Contacts' for='rad2-${key}'></label>
+					
+					<input id='rad3-${key}' name='rad-${key}' type='radio'>
+					<label data-text='Rules' for='rad3-${key}'></label>
+
+					<input id='rad4-${key}' name='rad-${key}' type='radio'>
+					<label data-text='Register' for='rad4-${key}'></label>
+
+					<div class='tab-c'>
+						<div class='card'>
+							<h1>${currentEvent.title}</h1>
+							<p>
+								<h3>${currentEvent.description || ""}</h3>
+								${generateImpDetails(currentEvent)}
+								
+							</p>
+						</div>
+					</div>
+					<div class='tab-c'>
+						<div class='card'>
+							<h1>Contact</h1>
+							<p>
+
+								${coordinatorTable(currentEvent.coords)}
+							
+							</p>
+						</div>
+					</div>
+					<div class='tab-c'>
+						<div class='card'>
+							<h1>Rules</h1>
+							<div style="text-align: left">
+							${generateRulesSection(currentEvent.rules)}
+							</div>
+						</div>
+					</div>
+					<div class='tab-c'>
+						<div class='card'>
+							
+							<div class="register-form">
+
+							<h3>${currentEvent.title}</h3></br>
+							
+						<form method="post" onsubmit="return false;" style="color: black" id="regForm">
+							<div>
+		      				  <label for="name">
+		      					<span class="required">Name: *</span> 
+									<input type="text" id="name" placeholder="Your Name" required="required" tabindex="1" autofocus="autofocus"/></br>
+		      				  </label> 
+							</div>
+							<div>
+		      				  <label for="email">
+		      					<span class="required">E-mail: *</span> 
+									<input type="email" id="email" placeholder="Email-id" required="required" tabindex="1" autofocus="autofocus"/></br>
+		      				  </label> 
+							</div>							
+							<div>
+		      				  <label for="cont">
+		      					<span class="required">Mobile: *</span> 
+									<input type="tel" id="cont" placeholder="Mobile No." required="required" tabindex="1" autofocus="autofocus"/></br>
+		      				  </label> 
+							</div>
+							<div>
+		      				  <label for="coll">
+		      					<span class="required">College Name: *</span> 
+									<input type="text" id="coll" placeholder="College Name" required="required" tabindex="1" autofocus="autofocus"/></br>
+		      				  </label> 
+							</div>
+							<div>
+									<button type="submit" class="submit-form" name="submit" onclick="register()">Register</button> 
+							</div>
+							</form>
+							<p id="refMessage"></p>
+						</div>
+					</div>
+				</div>					
+			`
+				$("#eventContainer").html(htmlString)
+
+				$("#osp").click()
+			})
+
+			$("#osp").animatedModal({
+				modalTarget: 'ospModal',
+				animatedIn: 'zoomIn',
+				animatedOut: 'bounceOut',
+				color: '#39BEB9'
+			});
+		}
+
+		$(".tab").on("click", function (ele) {
+			//alert(ele.target.id)
+			currentCat = ele.target.id
+
+			buildModal()
+		})
+
+		buildModal()
+	</script>
+	<script>
+		(function () {
+			var tiltSettings = [{},
+				{
+					movement: {
+						imgWrapper: {
+							translation: {
+								x: 10,
+								y: 10,
+								z: 30
+							},
+							rotation: {
+								x: 0,
+								y: -10,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 200,
+								easing: 'easeOutQuad'
+							}
+						},
+						lines: {
+							translation: {
+								x: 10,
+								y: 10,
+								z: [0, 70]
+							},
+							rotation: {
+								x: 0,
+								y: 0,
+								z: -2
+							},
+							reverseAnimation: {
+								duration: 2000,
+								easing: 'easeOutExpo'
+							}
+						},
+						caption: {
+							rotation: {
+								x: 0,
+								y: 0,
+								z: 2
+							},
+							reverseAnimation: {
+								duration: 200,
+								easing: 'easeOutQuad'
+							}
+						},
+						overlay: {
+							translation: {
+								x: 10,
+								y: -10,
+								z: 0
+							},
+							rotation: {
+								x: 0,
+								y: 0,
+								z: 2
+							},
+							reverseAnimation: {
+								duration: 2000,
+								easing: 'easeOutExpo'
+							}
+						},
+						shine: {
+							translation: {
+								x: 100,
+								y: 100,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 200,
+								easing: 'easeOutQuad'
+							}
+						}
+					}
+				},
+				{
+					movement: {
+						imgWrapper: {
+							rotation: {
+								x: -5,
+								y: 10,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 900,
+								easing: 'easeOutCubic'
+							}
+						},
+						caption: {
+							translation: {
+								x: 30,
+								y: 30,
+								z: [0, 40]
+							},
+							rotation: {
+								x: [0, 15],
+								y: 0,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 1200,
+								easing: 'easeOutExpo'
+							}
+						},
+						overlay: {
+							translation: {
+								x: 10,
+								y: 10,
+								z: [0, 20]
+							},
+							reverseAnimation: {
+								duration: 1000,
+								easing: 'easeOutExpo'
+							}
+						},
+						shine: {
+							translation: {
+								x: 100,
+								y: 100,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 900,
+								easing: 'easeOutCubic'
+							}
+						}
+					}
+				},
+				{
+					movement: {
+						imgWrapper: {
+							rotation: {
+								x: -5,
+								y: 10,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 50,
+								easing: 'easeOutQuad'
+							}
+						},
+						caption: {
+							translation: {
+								x: 20,
+								y: 20,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 200,
+								easing: 'easeOutQuad'
+							}
+						},
+						overlay: {
+							translation: {
+								x: 5,
+								y: -5,
+								z: 0
+							},
+							rotation: {
+								x: 0,
+								y: 0,
+								z: 6
+							},
+							reverseAnimation: {
+								duration: 1000,
+								easing: 'easeOutQuad'
+							}
+						},
+						shine: {
+							translation: {
+								x: 50,
+								y: 50,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 50,
+								easing: 'easeOutQuad'
+							}
+						}
+					}
+				},
+				{
+					movement: {
+						imgWrapper: {
+							translation: {
+								x: 0,
+								y: -8,
+								z: 0
+							},
+							rotation: {
+								x: 3,
+								y: 3,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 1200,
+								easing: 'easeOutExpo'
+							}
+						},
+						lines: {
+							translation: {
+								x: 15,
+								y: 15,
+								z: [0, 15]
+							},
+							reverseAnimation: {
+								duration: 1200,
+								easing: 'easeOutExpo'
+							}
+						},
+						overlay: {
+							translation: {
+								x: 0,
+								y: 8,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 600,
+								easing: 'easeOutExpo'
+							}
+						},
+						caption: {
+							translation: {
+								x: 10,
+								y: -15,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 900,
+								easing: 'easeOutExpo'
+							}
+						},
+						shine: {
+							translation: {
+								x: 50,
+								y: 50,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 1200,
+								easing: 'easeOutExpo'
+							}
+						}
+					}
+				},
+				{
+					movement: {
+						lines: {
+							translation: {
+								x: -5,
+								y: 5,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 1000,
+								easing: 'easeOutExpo'
+							}
+						},
+						caption: {
+							translation: {
+								x: 15,
+								y: 15,
+								z: 0
+							},
+							rotation: {
+								x: 0,
+								y: 0,
+								z: 3
+							},
+							reverseAnimation: {
+								duration: 1500,
+								easing: 'easeOutElastic',
+								elasticity: 700
+							}
+						},
+						overlay: {
+							translation: {
+								x: 15,
+								y: -15,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 500,
+								easing: 'easeOutExpo'
+							}
+						},
+						shine: {
+							translation: {
+								x: 50,
+								y: 50,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 500,
+								easing: 'easeOutExpo'
+							}
+						}
+					}
+				},
+				{
+					movement: {
+						imgWrapper: {
+							translation: {
+								x: 5,
+								y: 5,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 800,
+								easing: 'easeOutQuart'
+							}
+						},
+						caption: {
+							translation: {
+								x: 10,
+								y: 10,
+								z: [0, 50]
+							},
+							reverseAnimation: {
+								duration: 1000,
+								easing: 'easeOutQuart'
+							}
+						},
+						shine: {
+							translation: {
+								x: 50,
+								y: 50,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 800,
+								easing: 'easeOutQuart'
+							}
+						}
+					}
+				},
+				{
+					movement: {
+						lines: {
+							translation: {
+								x: 40,
+								y: 40,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 1500,
+								easing: 'easeOutElastic'
+							}
+						},
+						caption: {
+							translation: {
+								x: 20,
+								y: 20,
+								z: 0
+							},
+							rotation: {
+								x: 0,
+								y: 0,
+								z: -5
+							},
+							reverseAnimation: {
+								duration: 1000,
+								easing: 'easeOutExpo'
+							}
+						},
+						overlay: {
+							translation: {
+								x: -30,
+								y: -30,
+								z: 0
+							},
+							rotation: {
+								x: 0,
+								y: 0,
+								z: 3
+							},
+							reverseAnimation: {
+								duration: 750,
+								easing: 'easeOutExpo'
+							}
+						},
+						shine: {
+							translation: {
+								x: 100,
+								y: 100,
+								z: 0
+							},
+							reverseAnimation: {
+								duration: 750,
+								easing: 'easeOutExpo'
+							}
+						}
+					}
+				}
+			];
+
+			function init() {
+				var idx = 0;
+				[].slice.call(document.querySelectorAll('a.tilter')).forEach(function (el, pos) {
+					idx = pos % 2 === 0 ? idx + 1 : idx;
+					new TiltFx(el, tiltSettings[idx - 1]);
+				});
+			}
+
+			// Preload all images.
+			imagesLoaded(document.querySelector('main'), function () {
+				document.body.classList.remove('loading');
+				init();
+			});
+		})();
+	</script>
+</body>
+
+</html>

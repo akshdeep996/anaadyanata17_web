@@ -63,10 +63,11 @@ body {
 }
 
 .tab-content {
-    color: green;
     font-weight: 20px;
     text-align: left;
-    padding: .5em 10%;
+    text-align:justify;
+    padding-left: 7%;
+    padding-right: 7%;
     font-family: Roboto !important;
     color: white !important;
     font-size: 1.3em;

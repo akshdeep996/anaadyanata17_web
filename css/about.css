@@ -63,13 +63,14 @@ body {
 }
 
 .tab-content {
-    color: green;
     font-weight: 20px;
     text-align: left;
-    padding: .5em 10%;
+    text-align: justify !important;
     font-family: Roboto !important;
     color: white !important;
     font-size: 3vmin !important;
+    padding-left: 7%;
+    padding-right: 7%;
 }
 
 .tabular {

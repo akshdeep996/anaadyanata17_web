@@ -64,9 +64,9 @@ body {
 }
 
 .tab-content {
-    color: green;
     font-weight: 20px;
     text-align: left;
+    text-align:justify;
     font-family: Roboto !important;
     color: white !important;
     font-size: 3vmin !important;
@@ -179,7 +179,7 @@ a {
 
 .contact {
     padding-left: -10% !important;
-    margin-left: -20% !important;
+    margin-left: -10% !important;
 }
 
 
