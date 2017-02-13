@@ -67,22 +67,22 @@ $objPHPExcel->setActiveSheetIndex(0)
 # Formatting home screen
 $objPHPExcel->getActiveSheet()->getStyle('C4')->getFont()->getColor()->setARGB(PHPExcel_Style_Color::COLOR_BLUE);
 $objPHPExcel->getActiveSheet()->getStyle('C4')->getFont()->setSize(40);
-$objPHPExcel->getActiveSheet()->mergeCells("C4:L8");
-$objPHPExcel->getActiveSheet()->mergeCells("H9:L9");
-$objPHPExcel->getActiveSheet()->mergeCells("C11:L11");
+$objPHPExcel->getActiveSheet()->mergeCells("C4:M8");
+$objPHPExcel->getActiveSheet()->mergeCells("H9:M9");
+$objPHPExcel->getActiveSheet()->mergeCells("C11:M11");
 $objPHPExcel->getActiveSheet()->mergeCells("C18:G18");
-$objPHPExcel->getActiveSheet()->mergeCells("H18:L18");
+$objPHPExcel->getActiveSheet()->mergeCells("H18:M18");
 $style = array(
     'alignment' => array(
         'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
         'vertical' => PHPExcel_Style_Alignment::VERTICAL_CENTER,
     )
 );
-$objPHPExcel->getActiveSheet()->getStyle("C4:L8")->applyFromArray($style);
-$objPHPExcel->getActiveSheet()->getStyle("H9:L8")->applyFromArray($style);
-$objPHPExcel->getActiveSheet()->getStyle("C11:L11")->applyFromArray($style);
+$objPHPExcel->getActiveSheet()->getStyle("C4:M8")->applyFromArray($style);
+$objPHPExcel->getActiveSheet()->getStyle("H9:M8")->applyFromArray($style);
+$objPHPExcel->getActiveSheet()->getStyle("C11:M11")->applyFromArray($style);
 $objPHPExcel->getActiveSheet()->getStyle("C18:G18")->applyFromArray($style);
-$objPHPExcel->getActiveSheet()->getStyle("H18:L18")->applyFromArray($style);
+$objPHPExcel->getActiveSheet()->getStyle("H18:M18")->applyFromArray($style);
 
 
 # Rename worksheet
@@ -98,7 +98,8 @@ foreach($r as $reg) {
         ->setCellValue('C1', 'Email')
         ->setCellValue('D1', 'Phone')
         ->setCellValue('E1', 'College')
-        ->setCellValue('F1', 'Agent');
+        ->setCellValue('F1', 'Agent')
+        ->setCellValue('G1', 'Date Time');
 
     # Setting sheet as active to work on
     $objPHPExcel->setActiveSheetIndex($sheet_count);            
@@ -112,7 +113,8 @@ foreach($r as $reg) {
     $sheet->getStyle("C1")->getFont()->setBold(true);
     $sheet->getStyle("D1")->getFont()->setBold(true);
     $sheet->getStyle("E1")->getFont()->setBold(true);
-    $sheet->getStyle("E1")->getFont()->setBold(true);
+    $sheet->getStyle("F1")->getFont()->setBold(true);
+    $sheet->getStyle("G1")->getFont()->setBold(true);
     
     # Title of sheet as event title
     $sheet->setTitle($reg[0]['event']);
@@ -137,6 +139,8 @@ foreach($r as $reg) {
             $sheet->setCellValue('F'.$count, "app");
         }
 
+        $sheet->setCellValue('G'.$count, date("F j Y, g:i a", $p['date']));
+
         # Making columns to auto resize for fit content
         $sheet->getColumnDimension('A')->setAutoSize(true);
         $sheet->getColumnDimension('B')->setAutoSize(true);
@@ -144,6 +148,7 @@ foreach($r as $reg) {
         $sheet->getColumnDimension('D')->setAutoSize(true);
         $sheet->getColumnDimension('E')->setAutoSize(true);
         $sheet->getColumnDimension('F')->setAutoSize(true);
+        $sheet->getColumnDimension('G')->setAutoSize(true);
         $count++;
     }
 
