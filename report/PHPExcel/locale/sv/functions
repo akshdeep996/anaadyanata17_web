@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ##
 ##	Add-in and Automation functions			Tilläggs- och automatiseringsfunktioner
 ##
@@ -408,6 +409,8 @@ TRIM			= RENSA				##	Tar bort blanksteg från text
 UPPER			= VERSALER			##	Omvandlar text till versaler
 VALUE			= TEXTNUM			##	Omvandlar ett textargument till ett tal
 =======
+=======
+>>>>>>> 8d58168ab9dc913db778a1a4b5b708476984ac5a
 ##
 ##	Add-in and Automation functions			Tilläggs- och automatiseringsfunktioner
 ##
@@ -816,4 +819,7 @@ TEXT			= TEXT				##	Formaterar ett tal och omvandlar det till text
 TRIM			= RENSA				##	Tar bort blanksteg från text
 UPPER			= VERSALER			##	Omvandlar text till versaler
 VALUE			= TEXTNUM			##	Omvandlar ett textargument till ett tal
+<<<<<<< HEAD
+>>>>>>> 8d58168ab9dc913db778a1a4b5b708476984ac5a
+=======
 >>>>>>> 8d58168ab9dc913db778a1a4b5b708476984ac5a

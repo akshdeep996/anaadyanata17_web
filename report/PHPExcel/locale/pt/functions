@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ##
 ##	Add-in and Automation functions			Funções de Suplemento e Automatização
 ##
@@ -408,6 +409,8 @@ TRIM			= COMPACTAR			##	Remove espaços do texto
 UPPER			= MAIÚSCULAS			##	Converte texto em maiúsculas
 VALUE			= VALOR				##	Converte um argumento de texto num número
 =======
+=======
+>>>>>>> 8d58168ab9dc913db778a1a4b5b708476984ac5a
 ##
 ##	Add-in and Automation functions			Funções de Suplemento e Automatização
 ##
@@ -816,4 +819,7 @@ TEXT			= TEXTO				##	Formata um número e converte-o em texto
 TRIM			= COMPACTAR			##	Remove espaços do texto
 UPPER			= MAIÚSCULAS			##	Converte texto em maiúsculas
 VALUE			= VALOR				##	Converte um argumento de texto num número
+<<<<<<< HEAD
+>>>>>>> 8d58168ab9dc913db778a1a4b5b708476984ac5a
+=======
 >>>>>>> 8d58168ab9dc913db778a1a4b5b708476984ac5a
