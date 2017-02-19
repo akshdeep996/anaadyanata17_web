@@ -1,14 +1,18 @@
-*, *::after, *::before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+*,
+*::after,
+*::before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 body {
-	font-family: 'Roboto','Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+	font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
 	color: #463f51;
 	background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
 	overflow-x: hidden;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
 
 a {
 	outline: none;
@@ -17,7 +21,8 @@ a {
 	transition: color 0.2s;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
 	color: #fff;
 }
 
@@ -29,7 +34,9 @@ a:hover, a:focus {
 	pointer-events: none;
 }
 
+
 /* Icons */
+
 .icon {
 	display: block;
 	width: 1.5em;
@@ -38,7 +45,9 @@ a:hover, a:focus {
 	fill: currentColor;
 }
 
+
 /* Loader */
+
 .js .loading::before {
 	content: '';
 	position: fixed;
@@ -75,27 +84,37 @@ a:hover, a:focus {
 @-webkit-keyframes loaderAnim {
 	to {
 		opacity: 0.3;
-		-webkit-transform: translate3d(0,-100px,0);
-		transform: translate3d(0,-100px,0);
+		-webkit-transform: translate3d(0, -100px, 0);
+		transform: translate3d(0, -100px, 0);
 	}
 }
 
 @keyframes loaderAnim {
 	to {
 		opacity: 0.3;
-		-webkit-transform: translate3d(0,-100px,0);
-		transform: translate3d(0,-100px,0);
+		-webkit-transform: translate3d(0, -100px, 0);
+		transform: translate3d(0, -100px, 0);
 	}
 }
 
 @keyframes octocat-wave {
-	0%, 100% { transform: rotate(0); }
-	20%, 60% { transform: rotate(-25deg); }
-	40%, 80% { transform: rotate(10deg); }
+	0%,
+	100% {
+		transform: rotate(0);
+	}
+	20%,
+	60% {
+		transform: rotate(-25deg);
+	}
+	40%,
+	80% {
+		transform: rotate(10deg);
+	}
 }
 
 
 /* Content */
+
 .content {
 	padding: 0 0 4em;
 	height: 800px;
@@ -117,12 +136,14 @@ a:hover, a:focus {
 	}
 }
 
+
 /*Modal Content*/
+
 #btn-close-modal {
 	position: absolute !important;
-	width:100% !important;
+	width: 100% !important;
 	text-align: right;
-    right: 0 !important;
+	right: 0 !important;
 	margin: 3vh !important;
 	z-index: 9999;
 }
@@ -133,9 +154,18 @@ a:hover, a:focus {
 	-ms-transition: all 0.2s;
 	-o-transition: all 0.2s;
 	transition: all 0.2s;
-	cursor:pointer;
+	cursor: pointer;
 }
 
 .closebt:hover {
-	transform:rotate(90deg);
+	transform: rotate(90deg);
+}
+
+@media only screen and (max-width:767px) {
+	.modal-content .desktop {
+		display: none !important;
+	}
+	.modal-content .mobile {
+		display: block !important;
+	}
 }

@@ -5,14 +5,19 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#004894">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#004894">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#004894">
 	<title>Cultural Events | Anaadyanta 2017</title>
-	<meta name="description" content="Anaadyanta is the Annual Techno-Cultural Festival of Nitte Meenakshi Institute of Technology, Bangalore."
-	/>
-	<meta name="keywords" content="anaadyanta 2017, annual, techno-cultural, NMIT, dive, feel, come alive, underwater, events, Cultural"
+	<meta name="description" content="Cultural events of Anaadyanta 2017" />
+	<meta name="keywords" content="anaadyanta 2017, annual, techno-cultural, NMIT, dive, feel, come alive, underwater, events, Cultural, fashion show, Choreo Nite, StreetX"
 	/>
 	<meta name="author" content="Rajnarayan | Anaadyanta web team" />
 	<link rel="shortcut icon" href="favicon.ico">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Abril+Fatface" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Abril+Fatface" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/demo_eventdet.css" />
 	<link rel="stylesheet" type="text/css" href="css/component_eventdet.css" />
 	<link rel="stylesheet" href="css/animate.css">
@@ -47,14 +52,16 @@
 	</script>
 	<script type="text/javascript">
 		function back() {
-			window.history.back();
+			window.location.href = 'eventcat.html';
 		}
 	</script>
 	<script>
 		function register() {
 
 			$("#regForm").css("display", "none")
-			$("#refMessage").html("Working, please wait...").css("display", "block")
+			$("#refMessage").html(
+				`<i class="fa fa-refresh fa-spin fa-3x fa-fw"></i></br><span class="sr-only">Registering...please wait</span>`).css(
+				"display", "block")
 
 			var emailRegex =
 				/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -110,7 +117,7 @@
 			}
 
 			var event = currentEvent.title;
-			const newPostKey = firebase.database().ref().child('registeration').push().key
+			const newPostKey = firebase.database().ref().child('registration').push().key
 			const postData = {
 				eventKey: currentEvent.euid,
 				event: currentEvent.title,
@@ -122,9 +129,11 @@
 				agent: 'web'
 			}
 			var updates = {}
-			updates['/registeration/' + newPostKey] = postData
+			updates['/registration/' + newPostKey] = postData
 			firebase.database().ref().update(updates).then(function (res) {
-				$("#refMessage").html("Event registration successful!")
+				$("#refMessage").html(
+					`<div><i class="fa fa-check fa-3x" aria-hidden="true"></i></br><p>Event Registration Successful! Please check your E-mail for further details.</p></div>`
+				)
 			}).catch(function (err) {
 				$("#refMessage").html("Oops! Something went wrong! Please try again.")
 				console.log(JSON.stringify(err))
@@ -318,7 +327,7 @@
 					currentCatEvents[key] = events[key]
 				}
 			})
-
+			// <p class="tilter__description">${description}</p>
 
 
 			Object.keys(currentCatEvents).map(function (key) {
@@ -334,7 +343,7 @@
 						<div class="tilter__deco tilter__deco--overlay"></div>
 						<figcaption class="tilter__caption">
 							<h3 class="tilter__title">${e.title}</h3>
-							<p class="tilter__description">${description}</p>
+							
 						</figcaption>
 					</figure>
 				</a>
@@ -442,7 +451,10 @@
 				modalTarget: 'ospModal',
 				animatedIn: 'zoomIn',
 				animatedOut: 'bounceOut',
-				color: '#39BEB9'
+				color: '#39BEB9',
+				afterClose: function () {
+					$('body').css("overflow-x", "hidden");
+				}
 			});
 		}
 
@@ -867,6 +879,14 @@
 				init();
 			});
 		})();
+	</script>
+	<script>
+		// Show hover effect on mobile devices
+		[].slice.call(document.querySelectorAll('.grid a')).forEach(function (el) {
+			el.onclick = function () {
+				return false;
+			}
+		});
 	</script>
 </body>
 

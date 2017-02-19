@@ -1,13 +1,12 @@
 .register-form {
-    background-color: rgba(72, 72, 72, 0.7);
+    background: rgba(0, 78, 172, 0.5);
     padding: 10px 20px 30px 20px;
-    max-width: 100%;
-    float: left;
-    left: 20vmax;
-    margin-right: 3%;
-    margin-left: 0;
-    padding-left: 3%;
-    padding-right: 3%;
+    max-width: 35vmax;
+    text-align: center;
+    margin-right: auto !important;
+    margin-left: auto !important;
+    margin-top: 1.5%;
+    margin-bottom: 2%;
     position: relative;
     border-radius: 7px;
     -webkit-border-radius: 7px;
@@ -45,7 +44,7 @@
 
 .register-form button {
     cursor: pointer;
-    width: 80%;
+    width: 60%;
     border: none;
     background: #991D57;
     background-image: linear-gradient(bottom, #8C1C50 0%, #991D57 52%);
@@ -83,7 +82,9 @@ input:required {
 }
 
 #refMessage {
-    color: #16f211;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 @media only screen and (max-width: 768px) {

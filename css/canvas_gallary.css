@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+}
+
+
+#bgCanvas {
+  height: 120%;
+  width: auto;
+  top: 0;
+  left: 0;
+  position: absolute;
+  
+}

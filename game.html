@@ -5,14 +5,20 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Gaming & Sports Events | Anaadyanta 2017</title>
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#004894">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#004894">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#004894">
+	<title>Pro Nights | Anaadyanta 2017</title>
 	<meta name="description" content="Anaadyanta is the Annual Techno-Cultural Festival of Nitte Meenakshi Institute of Technology, Bangalore."
 	/>
-	<meta name="keywords" content="anaadyanta 2017, annual, techno-cultural, NMIT, dive, feel, come alive, underwater, events, gaming, sports"
+	<meta name="keywords" content="anaadyanta 2017, annual, techno-cultural, NMIT, dive, feel, come alive, underwater, pro nights, bonfire night, Proshow"
 	/>
 	<meta name="author" content="Rajnarayan | Anaadyanta web team" />
 	<link rel="shortcut icon" href="favicon.ico">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Abril+Fatface" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Abril+Fatface" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/demo_eventdet.css" />
 	<link rel="stylesheet" type="text/css" href="css/component_eventdet.css" />
 	<link rel="stylesheet" href="css/animate.css">
@@ -24,9 +30,9 @@
 		.navig:hover {
 			font-size: 1.2em !important;
 			transform: scale(1.2, 1.2);
-			-webkit-transform: scale(1.2, 1.2);
 			-moz-transform: scale(1.2, 1.2);
 			-o-transform: scale(1.2, 1.2);
+			-webkit-transform: scale(1.2, 1.2);
 			transition: 0.3s;
 		}
 	</style>
@@ -47,90 +53,7 @@
 	</script>
 	<script type="text/javascript">
 		function back() {
-			window.history.back();
-		}
-	</script>
-	<script>
-		function register() {
-
-			$("#regForm").css("display", "none")
-			$("#refMessage").html("Working, please wait...").css("display", "block")
-
-			var emailRegex =
-				/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-			var mobRegex = /^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$/g;
-
-			var name = document.getElementById("name").value;
-			var cont = document.getElementById("cont").value;
-			var email = document.getElementById("email").value;
-			var coll = document.getElementById("coll").value;
-
-			if (name == "") {
-				document.getElementById("name").focus();
-				$("#refMessage").html("Enter your name!")
-				$("#regForm").css("display", "block")
-				return
-			}
-
-			if (email == "") {
-				document.getElementById("email").focus();
-				$("#refMessage").html("Enter your Email-id!")
-				$("#regForm").css("display", "block")
-				return
-			} else if (!emailRegex.test(email)) {
-				document.getElementById("email").focus();
-				$("#refMessage").html("Enter a valid Email-id!")
-				$("#regForm").css("display", "block")
-				return
-			}
-
-			if (cont == "") {
-				document.getElementById("cont").focus();
-				$("#refMessage").html("Enter your Mobile Number!")
-				$("#regForm").css("display", "block")
-				return
-			} else if (!mobRegex.test(cont)) {
-				document.getElementById("cont").focus();
-				$("#refMessage").html("Enter a valid Mobile Number!")
-				$("#regForm").css("display", "block")
-				return
-			}
-
-			if (coll == "") {
-				document.getElementById("coll").focus();
-				$("#refMessage").html("Enter your College name!")
-				$("#regForm").css("display", "block")
-				return
-			}
-
-			if (!name || !cont || !email || !coll) {
-				$("#refMessage").html("You must fill all the details to register!")
-				$("#regForm").css("display", "block")
-				return
-			}
-
-			var event = currentEvent.title;
-			const newPostKey = firebase.database().ref().child('registeration').push().key
-			const postData = {
-				eventKey: currentEvent.euid,
-				event: currentEvent.title,
-				date: moment().unix(),
-				name,
-				phone: cont,
-				email,
-				college: coll,
-				agent: 'web'
-			}
-			var updates = {}
-			updates['/registeration/' + newPostKey] = postData
-			firebase.database().ref().update(updates).then(function (res) {
-				$("#refMessage").html("Event registration successful!")
-			}).catch(function (err) {
-				$("#refMessage").html("Oops! Something went wrong! Please try again later.")
-				console.log(JSON.stringify(err))
-				$("#regForm").css("display", "block")
-				return
-			})
+			window.location.href = 'eventcat.html';
 		}
 	</script>
 	<script>
@@ -167,8 +90,7 @@
 		<div class="modal-content">
 			<!--Starts-->
 			<div class='content-event'>
-				<div class='tabs-v' id="eventContainer">
-				</div>
+
 			</div>
 			<!--Ends-->
 		</div>
@@ -180,117 +102,16 @@
 	<script src="js/animatedModal.min.js"></script>
 	<script src="js/moment.js"></script>
 	<script>
-		function generateRulesSection(rules) {
-
-			if (!rules || rules.length < 1) {
-				return "<p>Yet to be decided</p>"
-			}
-
-			let content = ""
-
-			rules.map(r => {
-				if (r.isHeader) {
-					content += `<p style="padding-top: 10px;"><b>${r.name}</b></p>`
-					if (r.hasSubItem) {
-						content += `<ol  style="list-style-type: 1" >`
-						content += this.generateSubContent(r.subContent)
-						content += `</ol><br/>`
-					}
-				}
-			})
-
-
-			return content
-		}
-
-		function generateSubContent(rules) {
-			if (!rules) return
-
-			let content = ""
-			if (rules && rules.length > 0) {
-				rules.map(r => {
-					if (r.description) {
-						content += `<li style="padding-top: 10px"><b>${r.name}</b></li><p>${r.description}</p>`
-					} else {
-						if (r.hasSubItem) content += `<li style="padding-top: 10px"><b>${r.name}</b></li>`
-						else content += `<li>${r.name}</li>`
-					}
-					if (r.hasSubItem) {
-						content += `<ol>`
-						content += this.generateSubContent(r.subContent)
-						content += `</ol>`
-					}
-				})
-			}
-			return content
-		}
-
-		function coordinatorTable(coordinators) {
-			let content = ""
-			if (!coordinators || coordinators.length < 1) return "Coordinators will be assigned soon."
-			if (coordinators && coordinators.length > 0) {
-				coordinators.map(val => {
-					content += `<tr><td>${val.name}</td><td>${val.mobile || val.phone}</td></tr>`
-				})
-			}
-			return `<table style="width: 80%; text-align: left"><thead><tr><th style="text-align:left">Name</th><th style="text-align:left">Mobile/Phone</th></tr></thead><tbody>${content}</tbody></table>`
-		}
-
-		function generateImpDetails(eventDetails) {
-			let content =
-				`<table style="width: 100%; text-align: left" >
-						<tbody>
-							<tr >
-								<th>Venue</th>
-								<td>${"Nitte Meenakshi Institute of Technology, Bangalore"}</td>
-							</tr>
-							<tr >
-								<th>Date</th>
-								<td>Will be updated soon!</td>
-							</tr>
-							<tr>
-								<th>Time</th>
-								<td>Will be updated soon!</td>
-							</tr>
-							<tr>
-								<th>Registration Fees</th>
-								<td>${eventDetails.registration? "Rs. " + eventDetails.registration : "FREE" } </td>
-							</tr>
-							${this.generatePrizesTableRow(eventDetails.prizes)}    
-						</tbody>
-				    </table>`
-
-			return content
-
-		}
-
-		function generatePrizesTableRow(prizes) {
-			let content = "";
-			if (prizes && prizes.length > 0) {
-				prizes.map(prize => {
-					content +=
-						`
-                    <tr>
-                    <th>Prize ${prize.position}</th>
-                    <td>Rs. ${prize.amount} </td>
-                </tr>
-                    `
-				})
-			}
-			return content
-		}
-
-
 		function buildModal() {
 			currentCatEvents = {}
 			$("#eventSection").empty()
 			var heading =
 				`<div class="navig" style="position: absolute; top:0; left:0; margin-top: 3%; margin-left: 3%; cursor: pointer; z-index: 150; color: white;">
 		<i class="fa fa-arrow-left fa-2x" aria-hidden="true" onclick="back()"></i>
-	</div>>
-				<div class="grid">
+	</div>
+			<div class="grid">
 				<div class="grid__item">
-					<a class="linkerd link--takiri" href="#">Gaming & Sports<span style="-webkit-transform: translate(0px, 5vh) !important;transform: translate(0px, 5vh) !important;">Let the champion in you come alive!</span></a>
+					<a class="linkerd link--takiri" href="#">Cultural Events<span>Dive into Euphoria!</span></a>
 				</div>
 			</div>`
 			$("#eventSection").append($.parseHTML(heading))
@@ -300,24 +121,17 @@
 					currentCatEvents[key] = events[key]
 				}
 			})
-
-
-
 			Object.keys(currentCatEvents).map(function (key) {
 				var e = currentCatEvents[key]
-
-				var description = e.description ? e.description : "The description will be updated soon!";
-				description = description.length > 40 ? description.substr(0, 37) + "..." : description;
 
 				var nodeString =
 					`<a id="${key}" href="#ospModal" class="tilter tilter--3 eventModalSection">
 					<figure class="tilter__figure">
 						<img class="tilter__image" src="${e.image}" alt="${e.title}" />
-						<div class="tilter__deco tilter__deco--shine"><div></div></div>
 						<div class="tilter__deco tilter__deco--overlay"></div>
 						<figcaption class="tilter__caption">
 							<h3 class="tilter__title">${e.title}</h3>
-							<p class="tilter__description">${description}</p>
+							
 						</figcaption>
 					</figure>
 				</a>
@@ -850,6 +664,14 @@
 				init();
 			});
 		})();
+	</script>
+	<script>
+		// Show hover effect on mobile devices
+		[].slice.call(document.querySelectorAll('.grid a')).forEach(function (el) {
+			el.onclick = function () {
+				return false;
+			}
+		});
 	</script>
 </body>
 

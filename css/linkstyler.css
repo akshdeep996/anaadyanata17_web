@@ -6,7 +6,6 @@
 	position: relative;
 	font-size: 8em;
 	line-height: 1;
-	color: #9e9ba4;
 	display: inline-block;
 }
 
@@ -25,7 +24,8 @@
 	position: relative;
 	font-size: 8em;
 	line-height: 1;
-	color: rgb(0, 79, 172);
+	color: #fff !important;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 	display: inline-block;
 	margin-left: -5%;
 	margin-right: 5%;
@@ -45,7 +45,8 @@
 }
 
 .link--takiri:hover {
-	color: rgb(0,48,110);
+	color: #fff !important;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 }
 
 .link--takiri::before {
@@ -70,15 +71,15 @@
 	-webkit-transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
 	transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
 }
+
 .grid{
   min-width: 100% !important;
   margin-top: 2%;
   margin-bottom: 5%;
+  margin-right: auto;
+  margin-left: auto;
 }
-.grid .grid__item a{
-  color:#fff !important;
-  text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
-}
+
 .link--takiri span {
 	font-size: 20%;
 	font-weight: 400;
@@ -140,4 +141,12 @@
 	.grid__item {
 		width: 100%;
 	}
+}
+
+@media only screen and (max-width: 768px) {
+	
+    .grid{
+        margin-top: 8% !important;
+    }
+
 }

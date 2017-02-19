@@ -2,9 +2,21 @@
 <html lang="en" class="no-js">
 
 <head>
+	<script type="text/javascript" src="js/jquery.cookie.min.js"></script>
+	<script>
+		Cookies.set("previousUrl", window.location.href, {
+			path: "/"
+		});
+	</script>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#004894">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#004894">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#004894">
 	<title>About Us | Anaadyanata 2017</title>
 	<meta name="description" content="About Us" />
 	<meta name="keywords" content="Anaadyanta 2017, About Us, Techno-Cultural fest, Nitte Meenakshi Institute of Technology, NMIT, Dive! Feel & Come Alive, 9th 10th & 11th March 2017"
@@ -14,7 +26,8 @@
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/about.css" />
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-	<link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/linkstyler.css" />
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400,400i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 	<!--  Bootsrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -22,7 +35,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		function back() {
-			window.history.back();
+			window.location.href = 'index.html';
 		}
 	</script>
 	<style>
@@ -37,19 +50,24 @@
 	</style>
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
+	<canvas id='bgCanvas' style="z-index: -999"></canvas>
 	<div class="navig" style="position: absolute; top:0; left:0; margin-top: 3%; margin-left: 3%; cursor: pointer; z-index: 150; color: white;">
 		<i class="fa fa-arrow-left fa-2x" aria-hidden="true" onclick="back()"></i>
 	</div>
 	<div class="container-fluid about">
-		<h1> About Us</h1>
+		<div class="grid" style="margin-bottom: -4%;">
+			<div class="grid__item">
+				<a class="linkerd link--takiri" href="#" style="text-decoration: none;">About Us</a>
+			</div>
+		</div>
 		<div class="tabular">
 			<ul class="nav nav-tabs">
-				<li class="active effect1"><a data-toggle="tab" href="#home">NMIT</a></li>
-				<li class="effect1"><a data-toggle="tab" href="#menu1">Anaadyanata '17</a></li>
+				<!--<li class="effect1"><a data-toggle="tab" href="#home">NMIT</a></li>-->
+				<li class="active effect1"><a data-toggle="tab" href="#menu1">Anaadyanta '17</a></li>
 			</ul>
 			<div class="tab-content">
-				<div id="home" class="tab-pane fade in active">
+				<!--<div id="home" class="tab-pane fade">
 					<p>Recognised as one of the finest educational institutions in Karnataka attracting students from all over India and abroad,
 						Nitte Meenakshi Institute of Technology (NMIT) is an Autonomous Institution affiliated to the Visvesvaraya Technological
 						University (VTU).</p>
@@ -59,10 +77,10 @@
 						Agencies such as DST, DIT, AICTE, DRDO Labs, VGST, IEEE, VTU etc.</p>
 					<p>The campus has professionally and aesthetically designed buildings, surrounded by gardens making it highly conducive
 						for learning.</p>
-				</div>
-				<div id="menu1" class="tab-pane fade">
-					<p>From its humble 2003 endeavour, NITTE pulls out its repertoire, a Techno-Cultural event, for the makers and moulders
-						of Bangalore.</p>
+				</div>-->
+				<div id="menu1" class="tab-pane fade in active">
+					<p>From its humble 2003 endeavour, NITTE pulls out its repertoire, a National Level Techno-Cultural event, for the makers
+						and moulders of Bangalore.</p>
 					<p>A paper-bag of sharpened pencils, easels, notepads, inkpots, colours and light, Anaadyanta amalgamates the thinkers
 						and the dreamers in a three-day festivity of Art, Science and culture. It is not only a platform for the talented,
 						but also a means to take an incisive look at society and lifestyle. From showcasing ideas, wit and opinions to celebrating
@@ -76,6 +94,15 @@
 			</div>
 		</div>
 	</div>
+	<script src="js/eventcat.js"></script>
+	<script>
+		// Show hover effect on mobile devices
+		[].slice.call(document.querySelectorAll('.grid a')).forEach(function (el) {
+			el.onclick = function () {
+				return false;
+			}
+		});
+	</script>
 </body>
 
 </html>

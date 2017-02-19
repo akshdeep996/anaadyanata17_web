@@ -2,9 +2,21 @@
 <html lang="en">
 
 <head>
+	<script type="text/javascript" src="js/jquery.cookie.min.js"></script>
+	<script>
+		Cookies.set("previousUrl", window.location.href, {
+			path: "/"
+		});
+	</script>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#004894">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#004894">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#004894">
 	<title>Events Categories | Anaadyanta 2017</title>
 	<meta name="description" content="Categories of events in Anaadyanta 2017" />
 	<meta name="keywords" content="Anaadyanta, Events, Cultural, Technical, Gaming, Sports, Techno-Cultural fest, Nitte Meenakshi Institute of Technology, NMIT, Dive! Feel & Come Alive, 9th 10th & 11th March 2017"
@@ -14,13 +26,13 @@
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/demo_eventcat.css" />
 	<link rel="stylesheet" type="text/css" href="css/style_eventcat.css" />
-	<link rel="stylesheet" type="text/css" href="css/linkstyles_eventcat.css" />
+	<link rel="stylesheet" type="text/css" href="css/linkstyler.css" />
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:400" rel="stylesheet">
 	<script type="text/javascript">
 		function back() {
-			window.history.back();
+			window.location.href = 'index.html';
 		}
 	</script>
 	<style>
@@ -41,9 +53,9 @@
 		<div class="navig" style="position: absolute; top:0; left:0; margin-top: 1%; margin-left: 3%; cursor: pointer; z-index: 150; color: white;">
 			<i class="fa fa-arrow-left fa-2x" aria-hidden="true" onclick="back()"></i>
 		</div>
-		<div class="grid">
+		<div class="grid" style="font-size: 1.3em; margin-bottom: 2%;">
 			<div class="grid__item">
-				<a class="link link--surinami" href="#"><span data-letters-l="Eve" data-letters-r="nts">Events</span></a>
+				<a class="linkerd link--takiri" href="#">Events</a>
 			</div>
 		</div>
 		<section class="main">
@@ -69,8 +81,8 @@
 				<li>
 					<div class="ch-item">
 						<div class="ch-info">
-							<h3>Gaming & Sports</h3>
-							<p>Let your Champion Come Alive!<a href="game.html">View now</a></p>
+							<h3>Pro Nights</h3>
+							<p>Let your Soul Come Alive!<a href="pronights.html">View now</a></p>
 						</div>
 						<div class="ch-thumb ch-img-3"></div>
 					</div>
