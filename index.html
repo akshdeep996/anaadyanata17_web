@@ -2,16 +2,45 @@
 <html lang="en" class="no-js">
 
 <head>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.min.js"></script>
+	<script>
+		function hasWord(myString, myWord) {
+			return myString.indexOf(myWord) > -1;
+		}
+		var last = Cookies.get('previousUrl');
+		var pages = ['about.html', 'eventcat.html', 'support.html', 'team.html', 'gallary.html']
+		if (last) {
+			$(function () {
+				pages.forEach(function (page) {
+					if (last != window.location.href) {
+						if (hasWord(last, page)) {
+							$('main').addClass('landing-layout--open');
+							$('#logo').addClass('hide');
+						}
+					}
+				}, this);
+			});
+		}
+		Cookies.set("previousUrl", window.location.href, {
+			path: "/"
+		});
+	</script>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Anaadyanta 2017 | National level techno-cultural fest</title>
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#004894">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#004894">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#004894">
+	<title>Anaadyanta 2017 | National Level Techno-Cultural Fest</title>
 	<meta name="description" content="Anaadyanta is the Annual Techno- Cultural Festival of Nitte Meenakshi Institute of Technology, Bangalore."
 	/>
 	<meta name="keywords" content="anaadyanta 2017, annual techno-cultural fest, Nitte Meenakshi Institute of Technology, NMIT, Dive! Feel & Come Alive, Underwater, 9th 10th & 11th March 2017, fest in Bangalore"
 	/>
 	<meta name="author" content="Rajnarayan | Anaadyanta web team" />
-	<meta name="theme-color" content="#3399ff">
 	<link rel="shortcut icon" href="favicon.ico">
 	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
@@ -70,24 +99,27 @@
 			<div class="socialize" id="div1" style="z-index: 9999">
 				<ul class="accordion">
 					<li class="tabs">
-						<div class="social-links facebook-icon"><a href="https://www.facebook.com/anaadyantanmit/">Facebook</a></div>
+						<div class="social-links facebook-icon"><a href="https://www.facebook.com/anaadyantanmit/" target="_blank">Facebook</a></div>
 					</li>
 				</ul>
 				<ul class="accordion">
 					<li class="tabs">
-						<div class="social-links insta-icon"><a href="https://www.instagram.com/anaadyanta/">Instagram</a></div>
+						<div class="social-links insta-icon"><a href="https://www.instagram.com/anaadyanta/" target="_blank">Instagram</a></div>
 					</li>
 				</ul>
 			</div>
+			<div class="playstore">
+				<a href="https://play.google.com/store/apps/details?id=org.anaadyanta.anaadyanta17&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank"><img alt="Get it on Google Play" src="img/googleplay.png" style="z-index: 9999 !important; max-width: 15vmax;"/></a>
+			</div>
 			<img style="max-width: 20%; height: auto; margin-top: -8%;" src="img/logo.png" id="logo">
 			<br/>
-			<h1 class="landing-header__title" aria-label="Blue Divers" style="margin-top: -1.3%">
+			<h1 class="landing-header__title" aria-label="Blue Divers" style="margin-top: -1.3%; text-shadow: 2px 2px 2px rgba(0,0,0,0.5);">
 				<span>A</span><span>n</span><span>a</span><span>a</span><span>d</span><span>y</span><span>a</span><span>n</span><span>t</span><span>a</span><span> '</span><span>1</span><span>7</span>
 				</br>
 				<p class="dates">9<sup>th</sup>, 10<sup>th</sup> & 11<sup>th</sup> March</p>
 			</h1>
 			<br/>
-			<p class="landing-header__tagline rw-words rw-words-1">
+			<p class="landing-header__tagline rw-words rw-words-1" style="text-shadow: 2px 2px 2px rgba(0,0,0,0.5);">
 				<span class="sp1">Dive!</span>
 				<span class="sp2">Feel</span>
 				<span class="sp3">Come Alive!</span>
@@ -98,9 +130,9 @@
 		<button class="button button--trigger" aria-label="View more">
 				<svg class="icon icon--grid icon--shown"><use xlink:href="#icon-grid"></use></svg>
 				<svg class="icon icon--arrow-up icon--hidden"><use xlink:href="#icon-arrow"></use></svg>
-			</button>
+		</button>
 		<!-- Featured content that gets shown after the layout opens -->
-		<section class="featured-content">
+		<section class="featured-content" style="text-shadow: 2px 2px 2px rgba(0,0,0,0.5);">
 			<ul class="featured-list">
 				<li class="featured-list__item">
 					<div class="effected">
@@ -128,7 +160,7 @@
 				</li>
 				<li class="featured-list__item">
 					<div class="effected">
-						<a href="#" class="featured-list__link">
+						<a href="gallary.html" class="featured-list__link">
 							<img class="featured-list__img" src="img/images/Gallery.png" alt="Gallery">
 							<h3 class="featured-list__title">Gallery</h3>
 						</a>
@@ -152,7 +184,7 @@
 				</li>
 			</ul>
 		</section>
-		<!-- /featured-content -->
+		<!--Loader-->
 		<div class="loader">
 			<svg class="loader__img" viewBox="0 0 100 100" width="100px" height="100px">
 				<circle class="loader__circle" cx="22.8" cy="77.6" r="16.5" />

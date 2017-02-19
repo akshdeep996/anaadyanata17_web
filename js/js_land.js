@@ -73,7 +73,7 @@
 				this.render();
 			},
 			update: function () {
-				if (this.cntr++ % 1 == 0) {
+				if (this.cntr++ % 3 == 0) {
 					this.createCircle();
 				}
 

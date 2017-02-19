@@ -21,7 +21,7 @@ body {
     background : -moz-radial-gradient(circle,#1a82f7,#2F2727) !important;
     background : -o-radial-gradient(circle,#1a82f7,#2F2727) !important;
     background :  radial-gradient(circle,#1a82f7,#2F2727) !important;
-    font-family: Roboto !important;
+    font-family: Ubuntu !important;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -67,7 +67,7 @@ body {
     text-align:justify;
     padding-left: 7%;
     padding-right: 7%;
-    font-family: Roboto !important;
+    font-family: Ubuntu !important;
     color: white !important;
     font-size: 1.3em;
 }

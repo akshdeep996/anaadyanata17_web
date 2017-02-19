@@ -1,0 +1,152 @@
+/* General link styles */
+
+.link {
+	outline: none;
+	text-decoration: none;
+	position: relative;
+	font-size: 8em;
+	line-height: 1;
+	display: inline-block;
+}
+
+.link:hover {
+	color: #1e1a1b;
+}
+
+.link:focus {
+	outline: none;
+}
+
+
+.linkerd {
+	outline: none;
+	text-decoration: none;
+	position: relative;
+	font-size: 8em;
+	line-height: 1;
+	color: #fff !important;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+	display: inline-block;
+	margin-left: -5%;
+	margin-right: 5%;
+}
+
+
+/* Takiri */
+
+.link--takiri {
+	font-style: italic;
+	font-family: 'Kaushan Script', serif;
+	font-weight: 700;
+	font-size: 7em;
+	padding: 0 10px 20px;
+	-webkit-transition: color 0.5s;
+	transition: color 0.5s;
+}
+
+.link--takiri:hover {
+	color: #fff !important;
+	text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+.link--takiri::before {
+	content: '';
+	position: absolute;
+	height: 20px;
+	width: 65%;
+	top: 50%;
+	margin-top: -18px;
+	left: 20%;
+	z-index: -1;
+	background: rgba(255,255,255,0.8);
+	-webkit-transform: rotate3d(0, 0, 1, 45deg) scale3d(0, 1, 1);
+	transform: rotate3d(0, 0, 1, 45deg) scale3d(0, 1, 1);
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	-webkit-transform: rotate3d(0, 0, 1, 45deg) scale3d(0.7, 1, 1);
+	transform: rotate3d(0, 0, 1, 45deg) scale3d(0.7, 1, 1);
+}
+
+.link--takiri:hover::before {
+	-webkit-transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
+	transform: rotate3d(0, 0, 1, 45deg) scale3d(1, 1, 1);
+}
+
+.grid{
+  min-width: 100% !important;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.link--takiri span {
+	font-size: 20%;
+	font-weight: 400;
+	position: absolute;
+	right: 15px;
+	color: rgb(255, 255, 255);
+	bottom: 0;
+	opacity: 0;
+	-webkit-transform: translate3d(-10px, -10px, 0);
+	transform: translate3d(-10px, -10px, 0);
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+.link--takiri:hover span {
+	opacity: 1;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 42em) {
+	.link--takiri {
+		font-size: 3.5em;
+	}
+}
+
+
+/* Grid */
+
+.grid__item {
+	margin: 2%;
+	padding: 2%;
+	z-index: 1;
+	position: relative;
+	text-align: center;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-transform: translate3d(0, 0, 0);
+	width: 100% !important;
+	
+
+	/* Solves Safari bug because of SVG clipping mask */
+}
+
+.grid__item p {
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #777;
+}
+
+@media screen and (max-width: 50em) {
+	.grid__item {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	
+    .grid{
+        margin-top: 8% !important;
+    }
+
+}
