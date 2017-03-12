@@ -1,0 +1,530 @@
+@font-face {
+    font-family: Boh;
+    src: url('../fonts/boh.ttf');
+}
+
+html {
+    height: 100%;
+}
+
+.about h1 {
+    text-align: center;
+    color: #fff;
+    font-family: 'Kaushan Script' !important;
+    font-size: 6vmax;
+}
+
+.arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.spon li {
+    display: inline-block;
+}
+
+.spon li img {
+    padding-right: 10vh;
+}
+
+.seven-7 {
+
+height: 15vh !important;
+width: auto !important;
+
+}
+
+
+@media only screen and (max-width: 500px) {
+
+.spon li {
+    display: inline;
+}
+
+.spon li img {
+    padding-right: 0vh;
+}
+
+.one {
+
+    left: 10%;
+    position: absolute;
+
+}
+
+.two {
+
+left: 60%;
+    position: absolute;
+
+}
+
+.three {
+
+height: auto;
+width: 18vh !important;
+top:60vh;
+left: 10%;
+    position: absolute;
+
+}
+
+.four {
+
+height: auto;
+width: 18vh !important;
+top:55vh;
+left: 50%;
+position: absolute;
+
+}
+
+.five {
+
+    left: -5%;
+    top: 70vh;
+    position: absolute;
+
+}
+
+.six {
+
+    left: 50%;
+    top: 75vh;
+    position: absolute;
+
+}
+
+.seven {
+
+    left: 10%;
+    top: 92vh;
+    position: absolute;
+    
+
+}
+
+.eight {
+
+    left: 60%;
+    top: 92vh;
+    position: absolute;
+}
+
+.nine {
+
+    left: 10%;
+    top: 110vh;
+    position: absolute;
+}
+ 
+
+.ten {
+
+    margin-bottom: 10%;
+    height: auto;
+    width: 22vh !important;
+    left: 50%;
+    top: 110vh;
+    position: absolute;
+
+}
+
+.one1 {
+
+    left: 10%;
+    position: absolute;
+
+}
+
+.two2 {
+
+    left: 50%;
+    position: absolute;
+
+}
+
+.three3 {
+
+height: auto;
+width: 23vh !important;
+top:55vh;
+left: 3%;
+    position: absolute;
+
+}
+
+.four4 {
+
+height: auto;
+width: 18vh !important;
+top:55vh;
+left: 50%;
+position: absolute;
+
+}
+
+.five5 {
+
+    left: 10%;
+    top: 75vh;
+    position: absolute;
+
+}
+
+.six6 {
+
+    left: 50%;
+    top: 70vh;
+    position: absolute;
+
+}
+
+.seven7 {
+
+    left: 10%;
+    top: 88vh;
+    position: absolute;
+    
+
+}
+
+.eight8 {
+
+    left: 60%;
+    top: 88vh;
+    position: absolute;
+}
+
+.nine9 {
+
+    margin-bottom: 20% !important
+    height: auto;
+    width: 15vh !important;
+    left: 10%;
+    top: 110vh;
+    position: absolute;
+}
+ 
+
+.ten10 {
+
+    left: 50%;
+    top: 110vh;
+    position: absolute;
+
+}
+
+.one_1 {
+
+    left: 15%;
+    position: absolute;
+
+}
+
+.two_2 {
+
+    left: 60%;
+    position: absolute;
+
+}
+
+.three_3 {
+
+top:65vh;
+left: 10%;
+    position: absolute;
+
+}
+
+.four_4 {
+
+top:65vh;
+left: 58%;
+position: absolute;
+
+}
+
+.five_5 {
+
+    height: auto !important;
+    width: 20vh !important;
+    left: 10%;
+    top: 75vh;
+    position: absolute;
+
+}
+
+.six_6 {
+
+    left: 60%;
+    top: 70vh;
+    position: absolute;
+
+}
+
+.seven_7 {
+
+    height: auto !important;
+    width: 20vh !important;
+    left: 10%;
+    top: 88vh;
+    position: absolute;
+    
+
+}
+
+.eight_8 {
+
+    left: 60%;
+    top: 88vh;
+    position: absolute;
+}
+
+.nine_9 {
+
+    margin-bottom: 20% !important;
+    left: 5%;
+    top: 105vh;
+    position: absolute;
+}
+
+.one-1 {
+
+    left: 15%;
+    position: absolute;
+
+}
+
+.two-2 {
+
+    left: 60%;
+    position: absolute;
+
+}
+
+.three-3 {
+
+height: auto !important;
+width: 25vh !important;
+top:55vh;
+left: 10%;
+    position: absolute;
+
+}
+
+.four-4 {
+
+top:55vh;
+left: 65%;
+position: absolute;
+
+}
+
+.five-5 {
+
+    height: auto !important;
+    width: 20vh !important;
+    left: 10%;
+    top: 65vh;
+    position: absolute;
+
+}
+
+.six-6 {
+
+    left: 60%;
+    top: 65vh;
+    position: absolute;
+
+}
+
+.seven-7 {
+
+    height: auto !important;
+    width: 26vh !important;
+    left: -10%;
+    top: 82vh;
+    position: absolute;
+    
+
+}
+
+.eight-8 {
+
+    height: auto !important;
+    width: 32vh !important;
+    left: 30%;
+    top: 82vh;
+    position: absolute;
+}
+
+
+}
+
+body {
+    background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+    background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+    background: -o-radial-gradient(circle, #1a82f7, #2F2727);
+    background: radial-gradient(circle, #1a82f7, #2F2727);
+    font-family: 'Ubuntu' !important;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.effect1 a {
+    margin-top: -20%;
+    padding: 0 0 10px;
+    font-family: Boh !important;
+    font-size: 3vmin !important;
+    letter-spacing: 5px !important;
+}
+
+.effect1 a::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    content: '';
+    opacity: 0;
+    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+
+.effect1 a:hover::after,
+.effect1 a:focus::after {
+    height: 3px;
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+.tab-content {
+    font-weight: 20px;
+    text-align: left;
+    text-align: justify !important;
+    font-family: 'Ubuntu' !important;
+    font-style: italic;
+    color: white !important;
+    font-size: 1.4em !important;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.tabular {
+    margin-top: 5%;
+}
+
+.nav-tabs {
+    border-bottom-width: 0px;
+    border-bottom-style: none;
+    font-size: 1.4em;
+    width: 100%;
+    margin-bottom: 0px;
+    color: red;
+    text-align: center !important;
+    list-style: none;
+    margin-bottom: 15px !important;
+    border-bottom: 0px solid #00a69c !important;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    color: #fff !important;
+    cursor: pointer;
+    background-color: transparent !important;
+    border-bottom: 3px solid #00a69c !important;
+}
+
+.nav-tabs>li>a {
+    padding: 5px 15px;
+    font-weight: 700;
+    font-size: 1.2em;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #d9d9d9 !important;
+    border: 0px solid transparent !important;
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 0px solid;
+    border-radius: 0px 0px 0 0;
+    position: relative;
+    padding: 10px 15px;
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover {
+    text-decoration: none;
+    background-color: transparent !important;
+}
+
+.nav-tabs>li {
+    float: none !important;
+    text-align: center !important;
+}
+
+.nav>li {
+    display: inline-block !important;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+    background-color: none;
+}
+
+.effect1 a:hover {
+    text-decoration: none;
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity 1.5s linear !important;
+    -moz-transition: opacity 1.5s linear !important;
+    -ms-transition: opacity 1.5s linear !important;
+    -o-transition: opacity 1.5s linear !important;
+    transition: opacity 1.5s linear !important;
+}
+
+#bgCanvas {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+@media only screen and (max-width: 768px) {
+    .tab-content {
+        color: green;
+        font-weight: 20px;
+        text-align: left;
+        padding: .5em 10%;
+        font-family: 'Ubuntu' !important;
+        color: white !important;
+        font-size: 4vmin !important;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    #bgCanvas {
+        display: none;
+    }
+    .grid {
+        margin-top: 10% !important;
+        margin-bottom: 3% !important;
+    }
+}
